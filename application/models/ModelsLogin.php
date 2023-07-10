@@ -17,15 +17,46 @@
                   $query = $this->db->get('users');
                   return ($query->num_rows() == 1);
             }
+            
 
       }
-      class User extends CI_Model
+      class utilisateur extends CI_Model
       {
-          private $idUser;
-          private $nom;
+          private $id_utilisateur;
           private $email;
-          private $motDePasse;
-          private $identification;
-      }
+          private $mdp;
+
+          public function login()
+          {
+            //   $this->db->where('email', $this->getEmail());
+            //   $this->db->where('mdp', $this->getMotDePasse());
+            //   $query = $this->db->get('user');
+      
+            //   foreach ($query->result() as $row) {
+            //       $user = new utilisateur();
+            //       $user->setIdUser($row->id_utilisateur);
+            //       $user->setEmail($row->email);
+            //       $user->setMdp($row->mdp);
+            //       return $utilisateur;
+            //   }
+            //   return null;
+            if($mdp == $data['mdp'])
+        {
+            if($this->isEmailUnique()){
+                if($this->isNomUnique()){
+                    $this->insertDonne();
+                    return true;
+                }else{
+                    return "Nom deja utiliser";
+                }
+            }else{
+                return "Email deja utiliser";
+            }
+        }else{
+            return "mot de passe non identique";
+        }
+    }
+          }
+      
 
 ?>
