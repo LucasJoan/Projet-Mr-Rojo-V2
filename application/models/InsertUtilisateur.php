@@ -1,5 +1,5 @@
 <?php 
-      class client extends CI_Model
+      class InsertUtilisateur extends CI_Model
       {
             public function __construct()
             {
