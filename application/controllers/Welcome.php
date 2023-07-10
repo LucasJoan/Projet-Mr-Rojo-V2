@@ -22,25 +22,24 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->database();
-		$this->load->model('Client');
+		$this->load->model('InsertUtilisateur');
 		
 		// Récupérer les valeurs des champs
 		$nom = $this->input->post('nom');
 		$email = $this->input->post('email');
 		$mdp = $this->input->post('mdp');
-		$identification = $this->input->post('identification');
 		
 		// Vérifier si le champ 'nom' n'est pas vide
 		if (!empty($nom)) {
 			$data = array(
 				'nom' => $nom,
+				'Prenom' => $email,
 				'email' => $email,
 				'mdp' => $mdp,
-				'identification' => $identification
 			);
 			
 			// Insérer les données dans la base de données
-			$this->Client->insert_client($data);
+			$this->InsertUtilisateur->insert_Utilisateur($data);
 		}
 		
 		$this->load->view('index');
