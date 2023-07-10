@@ -25,7 +25,7 @@
         <button class="btn mt-3">Login</button>
     </form>
     <div class="text-center fs-6">
-        <a href="Welcome/logview">Mot de passe oublié? </a> ou <a href="inscription.html">S'inscrire</a>
+        <a href="Login/logview">Mot de passe oublié? </a> ou <a href="inscription.html">S'inscrire</a>
     </div>
 </div>
 

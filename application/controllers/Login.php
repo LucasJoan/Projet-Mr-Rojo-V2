@@ -18,32 +18,6 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->helper('url');
-		$this->load->database();
-		$this->load->model('InsertUtilisateur');
-		
-		// Récupérer les valeurs des champs
-		$nom = $this->input->post('nom');
-		$email = $this->input->post('email');
-		$mdp = $this->input->post('mdp');
-		
-		// Vérifier si le champ 'nom' n'est pas vide
-		if (!empty($nom)) {
-			$data = array(
-				'nom' => $nom,
-				'Prenom' => $email,
-				'email' => $email,
-				'mdp' => $mdp,
-			);
-			
-			// Insérer les données dans la base de données
-			$this->InsertUtilisateur->insert_Utilisateur($data);
-		}
-		
-		$this->load->view('index');
-	}
 
 	public function logview()
 	{
