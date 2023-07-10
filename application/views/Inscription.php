@@ -12,7 +12,6 @@
                   <input type="text" name="nom" value="">
                   <input type="text" name="email" value="">
                   <input type="password" name="mdp" value="">
-                  <input type="text" name="identification" value="">
                   <input type="submit" value="inserer">  
             </form>
             
