@@ -7,7 +7,7 @@
                   $this->load->database();
             }
 
-            public function insert_client($data)
+            public function insert_Utilisateur($data)
             {
                   $this->db->insert('user',$data);
             }
