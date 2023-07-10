@@ -6,6 +6,5 @@ class ControlleurLogin extends CI_Controller {
 	public function logview()
 	{
 		$this->load->view('Login');
-	}
-	
+	}	
 }

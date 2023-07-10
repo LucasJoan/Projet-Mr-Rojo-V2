@@ -9,7 +9,7 @@
 
             public function insert_Utilisateur($data)
             {
-                  $this->db->insert('user',$data);
+                  $this->db->insert('utilisateur',$data);
             }
       }
 ?>
