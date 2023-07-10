@@ -13,7 +13,7 @@
     <div class="text-center mt-4 name">
         BIENVENUE
     </div>
-    <form class="p-3 mt-3">
+    <form class="p-3 mt-3" action="ControlleurLogin/login" method="POST">
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
             <input type="text" name="email" id="email" placeholder="Entrez votre email">
@@ -25,7 +25,7 @@
         <button class="btn mt-3">Login</button>
     </form>
     <div class="text-center fs-6">
-        <a href="Login/logview">Mot de passe oublié? </a> ou <a href="inscription.html">S'inscrire</a>
+        <a href="ControlleurLogin/login">Mot de passe oublié? </a> ou <a href="inscription.html">S'inscrire</a>
     </div>
 </div>
 

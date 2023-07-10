@@ -17,5 +17,15 @@
                   $query = $this->db->get('users');
                   return ($query->num_rows() == 1);
             }
+
       }
+      class User extends CI_Model
+      {
+          private $idUser;
+          private $nom;
+          private $email;
+          private $motDePasse;
+          private $identification;
+      }
+
 ?>
