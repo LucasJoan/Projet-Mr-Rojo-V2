@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo base_url('Projet-Mr-Rojo/assets/inscription.css')?>">
-    <title>Examen Web</title>
+  <title>Complétion du Profil Utilisateur</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    
-<div class="wrapper">
-    
-    <div class="text-center mt-4 name">
-        BIENVENUE
-    </div>
-    <form class="p-3 mt-3" method='POST' action='Welcome/index'>
-        <div class="form-field d-flex align-items-center">
-            <span class="far fa-user"></span>
-            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom">
-        </div>
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="mdp" name="Prenom" id="Prenom" placeholder="Entrez votre prénom">
-        </div>
-        <div class="form-field d-flex align-items-center">
-            <span class="far fa-user"></span>
-            <input type="text" name="email" id="email" placeholder="Entrez votre email">
-        </div>
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="password" name="mdp" id="mdp" placeholder="Entrez votre mot de passe">
-        </div>
-        <button class="btn mt-3">S'inscrire</button>
-    </form>
-    <div class="text-center fs-6">
-        <a href="#">Avez vous déja un compte?</a> ou 
-        <a href="views/Login.php">Connectez</a>
-    </div>
-</div>
+  <div class="container">
+    <h1>Complétion du Profil Utilisateur</h1>
+    <form id="profileForm">
+      <label for="genre">Genre :</label>
+      <select id="genre" name="genre">
+        <option value="homme">Homme</option>
+        <option value="femme">Femme</option>
+      </select>
 
+      <label for="taille">Taille (en cm) :</label>lkjkljlk
+      <input type="number" id="taille" name="taille">
+
+      <label for="poids">Poids (en kg) :</label>
+      <input type="number" id="poids" name="poids">
+
+      <label for="objectif">Objectif :</label>
+      <select id="objectif" name="objectif">
+        <option value="perdre">Perdre du poids</option>
+        <option value="maintenir">Maintenir son poids</option>
+        <option value="prendre">Prendre du poids</option>
+      </select>
+
+      <button type="submit">Enregistrer</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
