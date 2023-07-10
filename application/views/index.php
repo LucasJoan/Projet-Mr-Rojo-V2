@@ -34,7 +34,7 @@
     </form>
     <div class="text-center fs-6">
         <a href="#">Avez vous déja un compte?</a> ou 
-        <a href="Login/logview">Connectez</a>
+        <a href="ControlleurLogin/logview">Connectez</a>
     </div>
 </div>
 
