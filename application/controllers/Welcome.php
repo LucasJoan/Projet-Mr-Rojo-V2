@@ -40,7 +40,6 @@ class Welcome extends CI_Controller {
 			
 			$this->InsertUtilisateur->insert_Utilisateur($data);
 		}
-		
 		$this->load->view('index');
 	}
 
