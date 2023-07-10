@@ -45,9 +45,4 @@ class Welcome extends CI_Controller {
 		$this->load->view('index');
 	}
 
-	public function logview()
-	{
-		$this->load->view('Login');
-	}
-	
 }
