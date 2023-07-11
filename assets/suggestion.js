@@ -40,22 +40,22 @@ document.getElementById('suggestionForm').addEventListener('submit', function(ev
   
     if (objectif === 'perdre') {
       if (duree >= 7) {
-        suggestions.push('Regime equilibre avec une alimentation riche en fruits et legumes');
-        suggestions.push('Activites sportives variées, telles que la course à pied, le velo et la natation');
+        suggestions.push('Regime equilibre avec une alimentation riche en fruits et legumes Adopter un mode de vie sain et équilibré en privilégiant une alimentation qui met abondance de fruits et légumes.');
+        suggestions.push('Faites des sports telles la marche et la natation, cella aide votre corps a generer mieux votre corps');
       } else {
-        suggestions.push('Adoptez une alimentation saine et evitez les aliments transformes');
-        suggestions.push('Faites au moins 30 minutes d\'exercice cardiovasculaire par jour');
+        suggestions.push('Evitez de manger des drunk food, adoptez toujours des aliments saines pour faire en sorte que votre corps possede plus de proteines');
+        suggestions.push('Etablissez un sport au moins trente minutes par jours pour renforcer votre force ainsi que votre energie');
       }
     } else if (objectif === 'maintenir') {
-      suggestions.push('Maintenez une alimentation equilibree');
-      suggestions.push('Faites de l\'exercice régulierement, comme la marche ou le yoga');
+      suggestions.push('Ne jamais rater votre repas manger le matin midi et le soir');
+      suggestions.push('Faire des exercices chaque matin recommandation: yoga aide à vous relaxer et à vous concentrer.');
     } else if (objectif === 'prendre') {
       if (duree >= 7) {
-        suggestions.push('Adoptez un regime riche en calories et en proteines');
-        suggestions.push('Entraînez-vous avec des exercices de musculation');
+        suggestions.push('Le proteines est necessaire pour la santé adoptez des regimes a base de proteine moins calorique.');
+        suggestions.push('Faire de la musculation aide votre perte de poids a diminuer rapidement');
       } else {
         suggestions.push('Augmentez votre apport calorique quotidien');
-        suggestions.push('Faites de l\'exercice de musculation pour développer vos muscles');
+        suggestions.push('Developper vos muscles par des exercices de musculation');
       }
     }
   
