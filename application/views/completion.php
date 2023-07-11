@@ -11,10 +11,13 @@
     <h1>Complétion du Profil Utilisateur</h1>
     <form id="profileForm" action="controlleurCompletion/index" method="POST">
       <label for="genre">Genre :</label>
-      <select id="genre" name="genre">
-        <option value="homme">Homme</option>
-        <option value="femme">Femme</option>
-      </select>
+
+          <select id="genre" name="genre">
+                <option value=""></option>
+            </select>
+            <?php foreach ($genre as $genres) { ?>  
+              <p><?php echo $genres->nom_genre;?></p>
+            <?php } ?>
 
       <label for="taille">Taille (en cm) :</label>
       <input type="number" id="taille" name="taille">
