@@ -63,3 +63,4 @@ create table completion(
 );
 
 insert into completion values(null,1,1,1.60,60);
+insert into completion values(null,1,2,1.60,60);
