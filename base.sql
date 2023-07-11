@@ -52,7 +52,6 @@ on completion.id_genre=genre.id_genre
 join utilisateur
 on completion.id_utilisateur=utilisateur.id_utilisateur;
 
-
 create table completion(
     id_Completion int primary key auto_increment,
     id_utilisateur int,
