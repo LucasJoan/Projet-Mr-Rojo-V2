@@ -12,7 +12,7 @@ insert into utilisateur values(null,'Rajoelina','Lucas','Lucas@gmail.com','1234'
 
 create table genre(
     id_genre int primary key auto_increment,
-    nom_genre varchar(10),
+    nom_genre varchar(10)
 );
 insert into genre values(null,'Femme');
 insert into genre values(null,'Homme');
