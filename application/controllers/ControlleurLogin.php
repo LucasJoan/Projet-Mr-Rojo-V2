@@ -6,10 +6,7 @@ class ControlleurLogin extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('session');
-	$this->load->database();
-
         $this->load->helper('url');
-
         $this->load->model('ModelsLogin');
     }
 
@@ -19,16 +16,18 @@ class ControlleurLogin extends CI_Controller {
         $password = $this->input->post('password');
 
         // Vérifiez les informations d'identification de l'utilisateur
-        $utilisateur = $this->ModelsLogin->getUserByEmail($email);
+        $user = $this->ModelsLogin->getUserByEmail($email);
 
-        if ($utilisateur && password_verify($password, $user->password)) {
+        if ($user && password_verify($password, $user->password)) {
             // Les informations d'identification sont valides, connectez l'utilisateur
             $this->session->set_userdata('user_id', $user->id);
-            redirect('dashboard'); // Redirigez vers la page de tableau de bord ou une autre page appropriée
+            redirect('Completion'); // Redirigez vers la page de tableau de bord ou une autre page appropriée
         } else {
             // Les informations d'identification sont invalides, affichez un message d'erreur
             $data['error'] = 'Email ou mot de passe incorrect.';
             $this->load->view('login', $data);
+            redirect('Completion'); // Redirigez vers la page de tableau de bord ou une autre page appropriée
+
         }
     }
 
@@ -38,8 +37,5 @@ class ControlleurLogin extends CI_Controller {
     }
 
 }
-
-
-
 
 ?>
