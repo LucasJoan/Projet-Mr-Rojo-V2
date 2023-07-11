@@ -24,7 +24,7 @@ class ControlleurLogin extends CI_Controller {
 			redirect('dashboard');
 		} else {
 			$data['error'] = 'Email ou mot de passe incorrect.';
-			$this->load->view('completion', $data);
+			$this->load->view('Login', $data);
 		}
 	}
 
