@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>Complétion du Profil Utilisateur</title>
-  <link rel="stylesheet" type="text/css" href="completion.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('Projet-Mr-Rojo/assets/completion.css')?>">
+  <link rel="stylesheet" href="<?php echo base_url('Projet-Mr-Rojo/assets/Login.css')?>">
+
 </head>
 <body>
   <div class="container">
