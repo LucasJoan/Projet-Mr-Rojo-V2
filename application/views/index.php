@@ -37,6 +37,6 @@
         <a href="ControlleurLogin/login">Connectez</a>
     </div>
 </div>
-<a href="Completion/compl">Completion</a>
+<a href="ChargeCompletion/index">Completion</a>
 </body>
 </html>
