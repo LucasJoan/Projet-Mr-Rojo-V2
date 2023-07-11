@@ -42,19 +42,25 @@ create table poids(
 );
 insert into poids values(null,60,1);
 
-select *
-from utilisateur
+select utilisateur.nom,
+genre.nom_genre,
+completion.taille,
+completion.poids
+from completion
 join genre
-on genre.id_utilisateur=utilisateur.id_utilisateur;
+on completion.id_genre=genre.id_genre
+join utilisateur
+on completion.id_utilisateur=utilisateur.id_utilisateur;
+
 
 create table completion(
     id_Completion int primary key auto_increment,
     id_utilisateur int,
-    foreign  key completion (id_utilisateur) references utilisateur(id_utilisateur),
+    foreign key completion (id_utilisateur) references utilisateur(id_utilisateur),
     id_genre int,
-    foreign  key  (id_genre) references genre(id_genre),
-    id_taille int,
-    foreign  key  (id_taille) references taille(id_taille),
-    id_poids int,
-    foreign  key  (id_poids) references poids(id_poids)
+    foreign key (id_genre) references genre(id_genre),
+    taille decimal(8.6),
+    poids decimal(8.6)   
 );
+
+insert into completion values(null,1,1,1.60,60);
