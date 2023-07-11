@@ -3,32 +3,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ControlleurLogin extends CI_Controller {
 
-	// public function logview()
-	// {
-
-	// }
-
-	public function login() // Renommez la méthode en minuscules pour correspondre à la convention de CodeIgniter
-	{
-	    $this->load->library('session');
-	    $this->load->helper('url');
-	    $email = $this->input->post('email');
-	    $mdp = $this->input->post('mdp');
-	    $user = new Utilisateur($email, $mdp); // Assurez-vous que la classe utilisateur est correctement incluse et nommée
-	    $user = $user->login();
-	    if($user != null){
-		  $this->session->set_userdata('id_utilisateur', $user->getId_utilisateur());
-	    }
-	    if($this->session->userdata('id_utilisateur') == null){
-		  $this->load->view('completion');
-	    }else
-	    {
-		  redirect('');
-	    }
-		$this->load->view('Login'); // Assurez-vous que le nom de la vue est correct (login_view.php)
-
+	public function __construct() {
+		parent::__construct();
+		$this->load->library('session');
+		$this->load->helper('url');
+		$this->load->model('ModelsLogin');
 	}
+
+	public function index() {
+		$this->load->view('login_view');
+	}
+
+	public function login() {
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+		
+		$user = $this->ModelsLogin->getUserByEmail($email);
+		if ($user && password_verify($password, $user->password)) {
+			$this->session->set_userdata('user_id', $user->id);
+			redirect('dashboard');
+		} else {
+			$data['error'] = 'Email ou mot de passe incorrect.';
+			$this->load->view('completion', $data);
+		}
+	}
+
+	public function logout() {
+		$this->session->unset_userdata('user_id');
+		redirect('login');
+	}
+
 }
+
+
 
 
 ?>
