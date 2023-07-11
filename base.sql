@@ -7,25 +7,24 @@ create table utilisateur(
     email varchar(100) not null unique,
     mdp varchar(100) not null
 );
-insert into utilisateur values(null,'Rakotoson','Sylvia','syly@gmail.com','1234');
-insert into utilisateur values(null,'Rajoelina','Lucas','Lucas@gmail.com','1234');
+
+insert into utilisateur values(null,'Rajoelina','Lucas','Lucas@gmail.com','123');
 
 create table genre(
     id_genre int primary key auto_increment,
     nom_genre varchar(10)
 );
+
 insert into genre values(null,'Femme');
 insert into genre values(null,'Homme');
 
 create table objectif(
     id_objectif int primary key auto_increment,
-    objectif varchar(100),
-    -- id_utilisateur int,
-    -- foreign  key objectif (id_utilisateur) references utilisateur(id_utilisateur)
-);
-insert into objectf values(null,'Perdre du poids');
-insert into objectf values(null,'Maintenir son poids');
-insert into objectf values(null,'Prendre du poids');
+    objectif varchar(100)
+    );
+insert into objectif values(null,'Perdre du poids');
+insert into objectif values(null,'Maintenir son poids');
+insert into objectif values(null,'Prendre du poids');
 
 create table taille(
     id_taille int primary key auto_increment,
@@ -56,10 +55,11 @@ on completion.id_utilisateur=utilisateur.id_utilisateur;
 create table completion(
     id_Completion int primary key auto_increment,
     id_utilisateur int,
-    foreign  key completion (id_utilisateur) references utilisateur(id_utilisateur),
+    foreign key completion (id_utilisateur) references utilisateur(id_utilisateur),
     id_genre int,
-    foreign  key  (id_genre) references genre(id_genre),
+    foreign key (id_genre) references genre(id_genre),
     taille decimal(8.6),
-    poids decimal(8.6)
+    poids decimal(8.6)   
 );
+
 insert into completion values(null,1,1,1.60,60);
