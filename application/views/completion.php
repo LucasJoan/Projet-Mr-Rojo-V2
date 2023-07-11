@@ -22,9 +22,9 @@
 
       <label for="objectif">Objectif :</label>
       <select id="objectif" name="objectif">
-        <option value="perdre">Perdre du poids</option>
-        <option value="maintenir">Maintenir son poids</option>
-        <option value="prendre">Prendre du poids</option>
+        <option value="perdre">Augmentez son poids</option>
+        <option value="maintenir">Reduire son poids</option>
+        <option value="IMC">Atteindre son IMC idéals</option>
       </select>
 
       <button type="submit">Enregistrer</button>
