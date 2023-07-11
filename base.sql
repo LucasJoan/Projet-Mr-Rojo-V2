@@ -51,8 +51,6 @@ create table completion(
     foreign  key completion (id_utilisateur) references utilisateur(id_utilisateur),
     id_genre int,
     foreign  key  (id_genre) references genre(id_genre),
-    id_taille int,
-    foreign  key  (id_taille) references taille(id_taille),
-    id_poids int,
-    foreign  key  (id_poids) references poids(id_poids)
+    id_taille decimal(8.6),
+    id_poids decimal(8.6)
 );
