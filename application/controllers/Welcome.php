@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-	
+
 	public function index()
 	{
 		$this->load->helper('url');
@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 				'nom' => $nom,
 				'prenom' => $prenom,
 				'email' => $mail,
-				'mdp' => $mdp,
+				'mdp' => $pass,
 			);
 			
 			$this->InsertUtilisateur->insert_Utilisateur($data);
