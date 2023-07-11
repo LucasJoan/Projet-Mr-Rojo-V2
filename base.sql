@@ -8,6 +8,7 @@ create table utilisateur(
     mdp varchar(100) not null
 );
 insert into utilisateur values(null,'Rakotoson','Sylvia','syly@gmail.com','1234');
+insert into utilisateur values(null,'Rajoelina','Lucas','Lucas@gmail.com','1234');
 
 create table genre(
     id_genre int primary key auto_increment,
