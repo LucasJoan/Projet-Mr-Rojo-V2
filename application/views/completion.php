@@ -2,19 +2,19 @@
 <html>
 <head>
   <title>Complétion du Profil Utilisateur</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="completion.css">
 </head>
 <body>
   <div class="container">
     <h1>Complétion du Profil Utilisateur</h1>
-    <form id="profileForm">
+    <form id="profileForm" action="controlleurCompletion/index" method="POST">
       <label for="genre">Genre :</label>
       <select id="genre" name="genre">
         <option value="homme">Homme</option>
         <option value="femme">Femme</option>
       </select>
 
-      <label for="taille">Taille (en cm) :</label>lkjkljlk
+      <label for="taille">Taille (en cm) :</label>
       <input type="number" id="taille" name="taille">
 
       <label for="poids">Poids (en kg) :</label>
@@ -31,6 +31,6 @@
     </form>
   </div>
 
-  <script src="script.js"></script>
+  <script src="completion.js"></script>
 </body>
 </html>
