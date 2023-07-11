@@ -11,14 +11,14 @@ class Welcome extends CI_Controller {
 		
 		// Récupérer les valeurs des champs
 		$nom = $this->input->post('nom');
-		$prenom = $this->input->post('prenom');
+		$prenom = $this->input->post('Prenom');
 		$mail = $this->input->post('email');
 		$pass = $this->input->post('mdp');
 
 		if (!empty($nom)) {
 			$data = array(
 				'nom' => $nom,
-				'prenom' => $prenom,
+				'Prenom' => $prenom,
 				'email' => $mail,
 				'mdp' => $pass,
 			);
