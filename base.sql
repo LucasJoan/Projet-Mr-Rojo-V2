@@ -21,7 +21,7 @@ insert into genre values(null,'Homme');
 create table objectif(
     id_objectif int primary key auto_increment,
     objectif varchar(100)
-    );
+);
 insert into objectif values(null,'Perdre du poids');
 insert into objectif values(null,'Maintenir son poids');
 insert into objectif values(null,'Prendre du poids');

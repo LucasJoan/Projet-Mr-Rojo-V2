@@ -11,13 +11,30 @@
     <h1>Complétion du Profil Utilisateur</h1>
     <form id="profileForm" action="controlleurCompletion/index" method="POST">
       <label for="genre">Genre :</label>
+      <select id="genre" name="genre">
+        <?php
+          // Connexion à la base de données
+          $conn = mysqli_connect("localhost", "root", "", "Projet_S4");
 
-          <select id="genre" name="genre">
-                <option value=""></option>
-            </select>
-            <?php foreach ($genre as $genres) { ?>  
-              <p><?php echo $genres->nom_genre;?></p>
-            <?php } ?>
+          // Vérification de la connexion
+          if (!$conn) {
+            die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+          }
+
+          // Récupérer les options de la table 'genres' dans la base de données
+          $query = "SELECT * FROM genre";
+          $result = mysqli_query($conn, $query);
+
+          // Générer les options du select
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo '<option value="' . $row['genre'] . '">' . $row['nom_genre'] . '</option>';
+            // echo $genre;
+          }
+
+          // Fermer la connexion à la base de données
+          mysqli_close($conn);
+        ?>
+      </select>
 
       <label for="taille">Taille (en cm) :</label>
       <input type="number" id="taille" name="taille">
@@ -27,9 +44,28 @@
 
       <label for="objectif">Objectif :</label>
       <select id="objectif" name="objectif">
-        <option value="perdre">Augmentez son poids</option>
-        <option value="maintenir">Reduire son poids</option>
-        <option value="IMC">Atteindre son IMC idéals</option>
+      <?php
+          // Connexion à la base de données
+          $conn = mysqli_connect("localhost", "root", "", "Projet_S4");
+
+          // Vérification de la connexion
+          if (!$conn) {
+            die("Erreur de connexion à la base de données : " . mysqli_connect_error());
+          }
+
+          // Récupérer les options de la table 'genres' dans la base de données
+          $query1 = "SELECT * FROM objectif";
+          $result1 = mysqli_query($conn, $query1);
+
+          // Générer les options du select
+          while ($row1 = mysqli_fetch_assoc($result1)) {
+            echo '<option value="' . $row1['objectif'] . '">' . $row1['objectif'] . '</option>';
+            // echo $genre;
+          }
+
+          // Fermer la connexion à la base de données
+          mysqli_close($conn);
+        ?>
       </select>
 
       <button type="submit">Enregistrer</button>
