@@ -5,8 +5,10 @@ create table utilisateur(
     nom varchar(100) not null,
     Prenom varchar(100) not null,
     email varchar(100) not null unique,
-    mdp varchar(100) not null,
+    mdp varchar(100) not null
 );
+insert into utilisateur values(null,'Rakotoson','Sylvia','syly@gmail.com','1234');
+
 create table genre(
     id_genre int primary key auto_increment,
     nom_genre varchar(10),
@@ -40,10 +42,15 @@ create table poids(
 );
 insert into poids values(null,60,1);
 
-select *
-from utilisateur
+select utilisateur.nom,
+genre.nom_genre,
+completion.taille,
+completion.poids
+from completion
 join genre
-on genre.id_utilisateur=utilisateur.id_utilisateur;
+on completion.id_genre=genre.id_genre
+join utilisateur
+on completion.id_utilisateur=utilisateur.id_utilisateur;
 
 create table completion(
     id_Completion int primary key auto_increment,
@@ -51,6 +58,7 @@ create table completion(
     foreign  key completion (id_utilisateur) references utilisateur(id_utilisateur),
     id_genre int,
     foreign  key  (id_genre) references genre(id_genre),
-    id_taille decimal(8.6),
-    id_poids decimal(8.6)
+    taille decimal(8.6),
+    poids decimal(8.6)
 );
+insert into completion values(null,1,1,1.60,60);
