@@ -1,17 +1,40 @@
-<?php
-    class ModelsLogin extends CI_Model 
+<?php 
+
+      class ModelsLogin extends CI_Model 
+{
+    private $id_utilisateur;
+    private $nom;
+    private $email;
+    private $mdp;
+
+    public function get_user_by_username($username) 
     {
-        public function check_login($mail, $pass) {
-            $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
-
-            $query = $this->db->get_where('utilisateur', array('nom' => $mail));
-            $user = $query->row();
-
-            if ($user && password_verify($pass, $user->pass)) {
-                return $user;
-            } else {
-                return false;
-            }
-        }
+        $this->db->where('username', $username);
+        $query = $this->db->get('users');
+        return $query->row();
     }
+
+    public function verify_password($user_id, $password) 
+    {
+        $this->db->where('id', $user_id);
+        $this->db->where('password', $password);
+        $query = $this->db->get('users');
+        return ($query->num_rows() == 1);
+    }
+}
+
+/*
+class utilisateur extends CI_Model
+{
+    private $id_utilisateur;
+    private $email;
+    private $mdp;
+
+    public function login()
+    {
+        // ...
+    }
+}
+*/
+
 ?>
