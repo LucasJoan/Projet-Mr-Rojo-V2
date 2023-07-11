@@ -5,24 +5,26 @@ create table utilisateur(
     nom varchar(100) not null,
     Prenom varchar(100) not null,
     email varchar(100) not null unique,
-    mdp varchar(100) not null,
+    mdp varchar(100) not null
 );
+
+insert into utilisateur values(null,'Rajoelina','Lucas','Lucas@gmail.com','123');
+
 create table genre(
     id_genre int primary key auto_increment,
-    nom_genre varchar(10),
+    nom_genre varchar(10)
 );
+
 insert into genre values(null,'Femme');
 insert into genre values(null,'Homme');
 
 create table objectif(
     id_objectif int primary key auto_increment,
-    objectif varchar(100),
-    -- id_utilisateur int,
-    -- foreign  key objectif (id_utilisateur) references utilisateur(id_utilisateur)
-);
-insert into objectf values(null,'Perdre du poids');
-insert into objectf values(null,'Maintenir son poids');
-insert into objectf values(null,'Prendre du poids');
+    objectif varchar(100)
+    );
+insert into objectif values(null,'Perdre du poids');
+insert into objectif values(null,'Maintenir son poids');
+insert into objectif values(null,'Prendre du poids');
 
 create table taille(
     id_taille int primary key auto_increment,
