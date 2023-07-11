@@ -18,7 +18,7 @@ class Welcome extends CI_Controller {
 		if (!empty($nom)) {
 			$data = array(
 				'nom' => $nom,
-				'prenom' => $prenom,
+				'Prenom' => $prenom,
 				'email' => $mail,
 				'mdp' => $pass,
 			);
